@@ -27,6 +27,11 @@ it("has a text area that users can type in", () => {
 });
 
 it("when forms is submited, text area gets emptied", () => {
+  wrapped
+    .find("textarea")
+    .simulate("change", { target: { value: "new comment" } });
+  wrapped.update();
+
   wrapped.find("form").simulate("submit");
   wrapped.update();
 
