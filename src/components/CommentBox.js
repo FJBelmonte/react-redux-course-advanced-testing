@@ -10,7 +10,7 @@ export default function CommentBox() {
     <form
       onSubmit={e => {
         e.preventDefault();
-        dispatch(actions.saveComment(e));
+        dispatch(actions.saveComment(comment));
         setComment("");
       }}>
       <h4>Add a comment</h4>
