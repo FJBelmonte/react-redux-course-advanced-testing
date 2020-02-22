@@ -5,7 +5,6 @@ export default function CommentList(props) {
   const state = useSelector(state => state);
 
   function renderComments() {
-    console.log(state);
     return state.comments.map((comment, index) => {
       return <li key={index}>{comment}</li>;
     });

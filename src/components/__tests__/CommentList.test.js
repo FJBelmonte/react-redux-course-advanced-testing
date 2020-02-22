@@ -13,7 +13,6 @@ beforeEach(() => {
     </Root>
   );
 });
-
 it("creates one <li/> per comment", () => {
   expect(wrapped.find("li").length).toEqual(2);
 });
