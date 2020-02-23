@@ -21,7 +21,9 @@ export default function CommentBox() {
           <button>Submit comment</button>
         </div>
       </form>
-      <button onClick={dispatch(actions.fetchComments())}>
+      <button
+        className='fetch-comments'
+        onClick={dispatch(actions.fetchComments())}>
         Fetch Comments
       </button>
     </div>
