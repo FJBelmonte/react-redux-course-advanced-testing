@@ -23,7 +23,7 @@ export default function CommentBox() {
       </form>
       <button
         className='fetch-comments'
-        onClick={dispatch(actions.fetchComments())}>
+        onClick={() => dispatch(actions.fetchComments())}>
         Fetch Comments
       </button>
     </div>
