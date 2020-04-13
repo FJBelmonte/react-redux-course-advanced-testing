@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function CommentList(props) {
-  const state = useSelector(state => state);
+  const state = useSelector((state) => state);
 
   function renderComments() {
     return state.comments.map((comment, index) => {
@@ -11,6 +11,7 @@ export default function CommentList(props) {
   }
   return (
     <div>
+      <h4>Comment List</h4>
       <ul>{renderComments()}</ul>
     </div>
   );
