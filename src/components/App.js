@@ -1,11 +1,19 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import CommentBox from "components/CommentBox";
 import CommentList from "components/CommentList";
 
-export default class App extends React.component {
-  renderButton() {}
-  renderHeader() {
+export default function App() {
+  const state = useSelector((state) => state);
+  function renderButton() {
+    if (state.auth) {
+      return <button>Sign out</button>;
+    } else {
+      return <button>Sign in</button>;
+    }
+  }
+  function renderHeader() {
     return (
       <ul>
         <li>
@@ -14,16 +22,16 @@ export default class App extends React.component {
         <li>
           <Link to='/post'>Post a comment</Link>
         </li>
-        <li>{this.renderButton}</li>
+        <li>{renderButton()}</li>
       </ul>
     );
   }
-  render() {
-    return (
-      <div>
-        <Route path='/post' component={CommentBox} />
-        <Route path='/' exact component={CommentList} />
-      </div>
-    );
-  }
+
+  return (
+    <div>
+      {renderHeader()}
+      <Route path='/post' component={CommentBox} />
+      <Route path='/' exact component={CommentList} />
+    </div>
+  );
 }
